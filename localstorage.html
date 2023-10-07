@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="#" >
+
+        <div class="form-floating"> 
+
+            <input type="text"  id="name"  class="form-control mt-4" placeholder="Email">
+            <label for="name" class="form-label">Name</label>
+
+
+        </div>
+
+        <div class="form-floating">
+
+            <input type="text" id="email" class="form-control mt-5 " placeholder="email"> 
+            <label for="email" class="form-label">Email</label>
+
+
+
+        </div>
+
+        <div class="form-floating">
+
+            <input type="number" id="number" class="form-control mt-5 " placeholder="number"> 
+            <label for="number" class="form-label">Phone Number</label>
+        </div>
+
+
+
+        
+      <input type="submit" class="btn"  value="Submit now" >
+
+    </form>
+
+    <script>
+        let btn=document.querySelector('.btn')
+        btn.addEventListener('click', (event) =>{
+          event.preventDefault()
+         document.querySelector('.btn').style.background='red'
+
+         let name=document.querySelector('#name')
+         let email=document.querySelector('#email')
+         let number=document.querySelector('#number')
+        localStorage.setItem('userName',name.value)
+        localStorage.setItem('email',email.value)
+        localStorage.setItem('number',number.value)
+
+
+        })
+        btn.addEventListener('mouseover', (event) =>{
+          event.preventDefault()
+          document.querySelector('.btn').style.background='yellow'
+
+        })
+        btn.addEventListener('mouseout', (event) =>{
+          event.preventDefault()
+          document.querySelector('.btn').style.background='green'
+
+        })
+        </script>
+
+
+
+
+
+</body>
+</html>
