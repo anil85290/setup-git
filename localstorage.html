@@ -49,9 +49,16 @@
          let name=document.querySelector('#name')
          let email=document.querySelector('#email')
          let number=document.querySelector('#number')
-        localStorage.setItem('userName',name.value)
-        localStorage.setItem('email',email.value)
-        localStorage.setItem('number',number.value)
+        // localStorage.setItem('userName',name.value)
+        // localStorage.setItem('email',email.value)
+        // localStorage.setItem('number',number.value)
+        let obj = {
+          name:name.value,
+          email:email.value,
+          number:number.value
+        }
+        let myobj = JSON.stringify(obj)
+        localStorage.setItem('userdetails',myobj)
 
 
         })
