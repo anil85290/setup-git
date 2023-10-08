@@ -37,6 +37,7 @@
 
         
       <input type="submit" class="btn"  value="Submit now" >
+      <ul id="list"></ul>
 
     </form>
 
@@ -46,9 +47,9 @@
           event.preventDefault()
          document.querySelector('.btn').style.background='red'
 
-         let name=document.querySelector('#name')
-         let email=document.querySelector('#email')
-         let number=document.querySelector('#number')
+         let name=document.querySelector('#name');
+         let email=document.querySelector('#email');
+         let number=document.querySelector('#number');
         // localStorage.setItem('userName',name.value)
         // localStorage.setItem('email',email.value)
         // localStorage.setItem('number',number.value)
@@ -57,10 +58,16 @@
           email:email.value,
           number:number.value
         }
-        let myobj = JSON.stringify(obj)
-        localStorage.setItem('userdetails',myobj)
+        let myobj = JSON.stringify(obj);
+        localStorage.setItem('userdetails',myobj);
+        let parentele =document.getElementById('list')
+        let childele = document.createElement('li')
+        childele.textContent= obj.name + ' - ' + obj.email + ' - ' + obj.number
+        parentele.appendChild(childele)
 
-
+        // let newElement=document.createElement('li');
+        // newElement.appendChild(document.createTextNode( name.value + ' -  ' + email.value + ' - ' + number.value));
+        // add.appendChild(newElement);
         })
         btn.addEventListener('mouseover', (event) =>{
           event.preventDefault()
@@ -72,6 +79,8 @@
           document.querySelector('.btn').style.background='green'
 
         })
+        
+
         </script>
 
 
